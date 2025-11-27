@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
+   <children>
+
+        <!-- Todo一覧 -->
+        <ListView fx:id="todoList"
+                  layoutX="40" layoutY="40"
+                  prefWidth="560" prefHeight="260" />
+
+        <!-- 追加ボタン -->
+        <Button fx:id="addBtn"
+                layoutX="350" layoutY="350"
+                prefWidth="150" prefHeight="70"
+                text="追加"
+        />
+
+        <!-- 並び替え -->
+        <Button fx:id="sortBtn"
+                layoutX="500" layoutY="40"
+                prefWidth="80"
+                text="並び替え"
+        />
+
+        <!-- 編集 -->
+        <Button fx:id="editBtn"
+                layoutX="500" layoutY="270"
+                prefWidth="80" text="編集"
+        />
+
+        <!-- 入力欄 -->
+        <TextField fx:id="titleField"
+                   layoutX="120" layoutY="350"
+                   prefWidth="200"
+                   promptText="タイトル" />
+
+        <TextField fx:id="dateField"
+                   layoutX="120" layoutY="400"
+                   prefWidth="200"
+                   promptText="日付(yyyy-mm-dd)" />
+
+    </children>
+
+</AnchorPane>
