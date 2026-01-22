@@ -3,31 +3,48 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
-   <children>
+<AnchorPane prefHeight="480" prefWidth="640" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
 
-        <!-- Todo一覧 -->
-        <ListView fx:id="todoList" layoutX="40" layoutY="40" prefHeight="260" prefWidth="560" />
+    <children>
 
-        <!-- 追加ボタン -->
-        <Button fx:id="addBtn" layoutX="350" layoutY="350" prefHeight="70" prefWidth="150" text="追加" />
+        <!-- タブ -->
+        <TabPane layoutX="40" layoutY="40" prefHeight="260" prefWidth="560">
 
-        <!-- 並び替え -->
-        <Button fx:id="sortBtn" layoutX="500" layoutY="40" prefWidth="80" text="並び替え" />
+            <tabs>
+                <Tab closable="false" text="未完了">
+                <ListView fx:id="activeList" />
+            </Tab>
+            <Tab closable="false" text="完了済み">
+                <ListView fx:id="completedList" prefHeight="240.0" prefWidth="560.0" />
+            </Tab>
+        </tabs>
+    </TabPane>
 
-        <!-- 編集 -->
-        <Button fx:id="editBtn" layoutX="500" layoutY="270" prefWidth="80" text="編集" />
 
-        <!-- 入力欄 -->
-        <TextField fx:id="titleField" layoutX="120" layoutY="350" prefWidth="200" promptText="タイトル" />
+        <!-- 入力 -->
+        <TextField fx:id="titleField" layoutX="120.0" layoutY="350.0" prefWidth="200" promptText="タイトル" />
 
-        <TextField fx:id="dateField" layoutX="120" layoutY="400" prefWidth="200" promptText="日付(月日)" />
-      <Label layoutX="40.0" layoutY="23.0" text="タイトル" />
-      <Label layoutX="292.0" layoutY="23.0" prefHeight="17.0" prefWidth="30.0" text="日付" />
+        <TextField fx:id="dateField" layoutX="120.0" layoutY="392.0" prefWidth="200" promptText="日付（月日）" />
+
+        <!-- ボタン -->
+        <Button fx:id="addBtn" layoutX="377.0" layoutY="350.0" prefHeight="66.0" prefWidth="150" text="追加" />
+
+        <Button fx:id="editBtn" layoutX="511.0" layoutY="11.0" prefWidth="70" text="編集" />
+
+        <Button fx:id="deleteBtn" layoutX="506.0" layoutY="307.0" prefWidth="80" text="削除" />
+
+                <Button fx:id="restoreBtn" layoutX="407.0" layoutY="307.0" prefWidth="80" text="復元" />
+
+
+        <Button fx:id="sortBtn" layoutX="417.0" layoutY="11.0" prefWidth="70" text="並び替え" />
+
+        <!-- ラベル -->
+        <Label layoutX="40" layoutY="15" text="Todo List" />
 
     </children>
-
 </AnchorPane>

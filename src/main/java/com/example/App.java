@@ -11,13 +11,22 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        var loader = new FXMLLoader(getClass().getResource("main.fxml"));
-        var scene = new Scene(loader.load());
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
-        stage.setScene(scene);
+        FXMLLoader loader = new FXMLLoader(
+                App.class.getResource("/com/example/main.fxml")
+        );
+
+        Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(
+                App.class.getResource("/com/example/style.css").toExternalForm()
+        );
+
         stage.setTitle("MyApp");
+        stage.setScene(scene);
         stage.show();
     }
 
+    public static void main(String[] args) {
+        launch();
+    }
 }
